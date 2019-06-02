@@ -10,6 +10,8 @@
 <p v-else>
     <table border="1" width="100%" cellpadding="5">
        <tr>
+        <th>№</th>
+       	<th>Дата</th>
         <th>Пользователь</th>
         <th>Электронная почта</th>
         <th>Дополнительное поле</th>
@@ -45,7 +47,6 @@
 		    e.preventDefault();
 		    this.http(this,'show-users');
 		    this.users = this.response.users;
-		    console.log(this.response)
 		},
 		
 	},

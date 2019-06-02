@@ -11,7 +11,7 @@
     <component v-bind:is="currentForm "  
     v-bind:http='request'
     v-bind:namePage = 'namePage'
-    v-bind:welcomeText = 'welcomeText'
+    v-bind:welcomeText = 'String(welcomeText)'
     v-on:succesLogin='succesLogin'
     v-on:clickButton='clickButton'>
     </component>
@@ -54,6 +54,7 @@ export default {
                 url = self.$el.action
                 var data = new URLSearchParams(new FormData(self.$el))
                 data.append('method',methodRequest);
+                console.log('method',methodRequest,'data',data);
                 fetch(url, {
                 headers: {'Content-Type': "application/x-www-form-urlencoded"},
                 method: 'POST',

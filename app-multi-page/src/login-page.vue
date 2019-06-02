@@ -68,7 +68,6 @@
 			if (this.password && this.login){
 				this.http(this,'login');
 			}
-			console.log('')
 	     },
 	},
 	computed:{

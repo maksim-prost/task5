@@ -79,6 +79,7 @@ export default{
 			if (this.password && this.login){
 				this.http(this,'register-page');
 			}
+
 		}
 	}, 
 	computed:{
