@@ -1,8 +1,8 @@
 # модуль отвечает за обработку запросов
-from flask import  jsonify,request
 from app import app
-#добавляет класс запись в бд 
-from models import UsersSite
+from flask import  jsonify,request #импортируем методы приведения обьектов к json и метод обработки запросов
+from models import UsersSite #импортируем класс запись в бд 
+
 headers = {'Access-Control-Allow-Origin': '*',
 		   'Content-type': 'text/html',		}
 
@@ -31,9 +31,8 @@ def fun1(form):
 					someParametr=form.get('someParametr')).save()
 	return jsonify({'response':True,'errors':[]}),201,headers
 	
-#возвращает список пользователей с полями почти и дополнительные параметры
+#возвращает список пользователей с полями определенными в методе класса
 def fun2(form):
-	# return '{'+'users:[{}]'.format(UsersSite.query.all())+'}',200, headers
 	return jsonify({'users':
 		[user.json() for user in UsersSite.query.all()]}),200, headers
 
